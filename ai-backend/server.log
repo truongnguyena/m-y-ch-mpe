@@ -3,3 +3,7 @@ INFO:     Waiting for application startup.
 INFO:     Application startup complete.
 INFO:     Uvicorn running on http://0.0.0.0:8000 (Press CTRL+C to quit)
 INFO:     127.0.0.1:34928 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58618 - "POST /ingest HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58632 - "POST /ingest HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58642 - "GET /search?query=figure%20tanjiro&top_k=3&namespace=catalog HTTP/1.1" 200 OK
+INFO:     127.0.0.1:37346 - "POST /chat HTTP/1.1" 200 OK
