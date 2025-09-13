@@ -11,7 +11,10 @@ import { AssistantService } from '../../services/assistant';
 	    <button class="fab" (click)="toggle()">AI</button>
 	    <div class="panel">
 	      <div class="header">
-	        <strong>Trợ lý AI</strong>
+	        <div class="left">
+	          <img class="avatar" [src]="svc.avatarUrl" alt="assistant avatar" />
+	          <strong>Trợ lý AI</strong>
+	        </div>
 	        <button class="clear" (click)="clear()">Xoá</button>
 	      </div>
 	      <div class="messages">
@@ -29,9 +32,11 @@ import { AssistantService } from '../../services/assistant';
 	styles: `
 	  .assistant { position: fixed; right: 20px; bottom: 20px; z-index: 50; }
 	  .fab { width: 56px; height: 56px; border-radius: 50%; border: 0; color: #fff; background: linear-gradient(135deg, var(--pink-500), var(--purple-600)); box-shadow: 0 8px 24px rgba(255,79,163,.35); font-weight: 800; }
-	  .panel { display: none; width: 320px; height: 440px; background: rgba(30,20,48,.95); border: 1px solid rgba(255,255,255,.12); border-radius: 16px; overflow: hidden; backdrop-filter: blur(6px); }
+	  .panel { display: none; width: 320px; height: 480px; background: rgba(30,20,48,.95); border: 1px solid rgba(255,255,255,.12); border-radius: 16px; overflow: hidden; backdrop-filter: blur(6px); }
 	  .assistant.open .panel { display: grid; grid-template-rows: auto 1fr auto; }
 	  .header { display: flex; align-items: center; justify-content: space-between; padding: 10px 12px; border-bottom: 1px solid rgba(255,255,255,.12); }
+	  .header .left { display: flex; align-items: center; gap: 8px; }
+	  .avatar { width: 28px; height: 28px; border-radius: 50%; object-fit: cover; border: 1px solid rgba(255,255,255,.2); }
 	  .messages { padding: 10px; overflow: auto; display: grid; gap: 8px; }
 	  .msg { max-width: 80%; padding: 8px 10px; border-radius: 10px; background: rgba(255,255,255,.06); }
 	  .msg.user { justify-self: end; background: linear-gradient(135deg, rgba(255,79,163,.35), rgba(138,92,255,.35)); }
