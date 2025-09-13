@@ -30,5 +30,9 @@ export const routes: Routes = [
     path: 'admin/ingest',
     loadComponent: () => import('./pages/admin-ingest/admin-ingest').then(m => m.AdminIngestComponent)
   },
+  {
+    path: 'contact',
+    loadComponent: () => import('./pages/contact/contact').then(m => m.ContactComponent)
+  },
   { path: '**', redirectTo: '' }
 ];

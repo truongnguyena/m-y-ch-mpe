@@ -18,6 +18,7 @@ import { RouterLink, RouterLinkActive } from '@angular/router';
         <a routerLink="/cart" routerLinkActive="active">Giỏ hàng</a>
         <a routerLink="/checkout" routerLinkActive="active">Thanh toán</a>
         <a routerLink="/wallet" routerLinkActive="active">Ví xu</a>
+        <a routerLink="/contact" routerLinkActive="active">Liên hệ</a>
         <a routerLink="/admin/ingest" routerLinkActive="active">Admin: Nạp dữ liệu</a>
       </nav>
     </aside>
