@@ -1,0 +1,34 @@
+/* Global theme: pink + lilac */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap');
+
+:root {
+  --pink-50: #ffe0ef;
+  --pink-100: #ffc2df;
+  --pink-500: #ff4fa3;
+  --pink-600: #ff2e8c;
+  --lilac-100: #efe7ff;
+  --lilac-200: #e6d6ff;
+  --lilac-300: #d7c6ff;
+  --purple-500: #a784ff;
+  --purple-600: #8a5cff;
+  --text-100: #f9f7fb;
+  --text-300: #e9e1f2;
+}
+
+* { box-sizing: border-box; }
+html, body { height: 100%; }
+body {
+  margin: 0;
+  font-family: 'Inter', system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+  background: linear-gradient(180deg, #160f1d, #1b1326 35%, #241834);
+  color: var(--text-100);
+}
+
+a { color: inherit; }
+
+.card {
+  background: rgba(255,255,255,.05);
+  border: 1px solid rgba(255,255,255,.08);
+  border-radius: 16px;
+  padding: 16px;
+}

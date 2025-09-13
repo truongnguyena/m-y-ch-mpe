@@ -1,0 +1,29 @@
+:root {
+  --pink-500: #ff4fa3;
+  --pink-600: #ff2e8c;
+  --lilac-200: #e6d6ff;
+  --lilac-300: #d7c6ff;
+  --purple-600: #8a5cff;
+  --bg-950: #0f0a12;
+  --bg-900: #160f1d;
+  --text-100: #f9f7fb;
+  --text-300: #e9e1f2;
+  --muted-500: #c8b9d9;
+}
+
+.app-shell {
+  display: grid;
+  grid-template-columns: 240px 1fr;
+  min-height: 100vh;
+  background: linear-gradient(180deg, var(--bg-900), #1b1326 35%, #241834);
+  color: var(--text-100);
+}
+
+.app-main {
+  display: grid;
+  grid-template-rows: auto 1fr;
+}
+
+.page-container {
+  padding: 20px 24px;
+}
