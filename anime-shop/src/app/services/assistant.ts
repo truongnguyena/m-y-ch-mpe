@@ -9,7 +9,7 @@ const DEFAULT_AVATAR = localStorage.getItem('ai_avatar') || 'https://cdn.jsdeliv
 @Injectable({ providedIn: 'root' })
 export class AssistantService {
 	readonly messages = signal<ChatMessage[]>([
-		{ role: 'system', text: 'Xin chào! Mình là trợ lý Anime Shop, mình có thể giúp gì cho bạn?', ts: Date.now() }
+		{ role: 'system', text: 'Xin chào! Mình là trợ lý của kurumianimeshop, mình có thể giúp gì cho bạn?', ts: Date.now() }
 	]);
 
 	readonly avatarUrl = DEFAULT_AVATAR;

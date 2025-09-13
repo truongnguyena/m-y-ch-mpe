@@ -22,5 +22,5 @@ import { AssistantChatComponent } from './components/assistant-chat/assistant-ch
 	styleUrl: './app.scss'
 })
 export class App {
-	protected readonly title = signal('anime-shop');
+	protected readonly title = signal('kurumianimeshop');
 }

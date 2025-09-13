@@ -8,7 +8,7 @@ import { RouterLink, RouterLinkActive } from '@angular/router';
     <aside class="sidebar">
       <div class="brand">
         <span class="logo">✦</span>
-        <span class="name">Anime Shop</span>
+        <span class="name">kurumianimeshop</span>
       </div>
       <nav class="menu">
         <a routerLink="/" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }">

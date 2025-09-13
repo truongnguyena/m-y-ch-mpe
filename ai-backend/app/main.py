@@ -127,7 +127,7 @@ class DocumentStore:
         return result
 
 
-app = FastAPI(title="Anime Shop AI Backend", version="0.1.0")
+app = FastAPI(title="kurumianimeshop AI Backend", version="0.1.0")
 app.add_middleware(
     CORSMiddleware,
     allow_origins=["*"],

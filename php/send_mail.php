@@ -16,11 +16,11 @@ if (!$data) {
 }
 
 $to = getenv('MAIL_TO') ?: 'you@example.com';
-$subject = '[AnimeShop] Contact from ' . ($data['name'] ?? 'unknown');
+$subject = '[kurumianimeshop] Contact from ' . ($data['name'] ?? 'unknown');
 $body = "Email: " . ($data['email'] ?? '') . "\n" .
 		"Subject: " . ($data['subject'] ?? '') . "\n\n" .
 		($data['message'] ?? '');
-$headers = 'From: no-reply@animeshop.local' . "\r\n" . 'Content-Type: text/plain; charset=utf-8';
+$headers = 'From: no-reply@kurumianimeshop.local' . "\r\n" . 'Content-Type: text/plain; charset=utf-8';
 
 $result = @mail($to, $subject, $body, $headers);
 if (!$result) {
