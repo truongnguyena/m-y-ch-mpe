@@ -54,7 +54,13 @@ export class ContactComponent {
       this.status = 'Đã gửi liên hệ!';
       this.name = this.email = this.subject = this.message = '';
     } catch {
-      this.status = 'Gửi thất bại. Vui lòng thử lại.';
+      try {
+        await this.emailService.sendContactViaBackend({ name: this.name, email: this.email, subject: this.subject, message: this.message }).toPromise();
+        this.status = 'Đã gửi liên hệ qua máy chủ AI!';
+        this.name = this.email = this.subject = this.message = '';
+      } catch {
+        this.status = 'Gửi thất bại. Vui lòng thử lại.';
+      }
     } finally {
       this.sending = false;
     }

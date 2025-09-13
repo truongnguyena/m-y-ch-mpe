@@ -22,6 +22,12 @@ except Exception:
     SentenceTransformer = None  # type: ignore
 
 
+try:
+    from dotenv import load_dotenv  # type: ignore
+    load_dotenv()
+except Exception:
+    pass
+
 DATA_DIR = Path(__file__).resolve().parent.parent / "data"
 DATA_DIR.mkdir(parents=True, exist_ok=True)
 INDEX_PATH = DATA_DIR / "faiss.index"
@@ -236,6 +242,41 @@ def chat(req: ChatRequest):
         contexts=[SearchResponseDoc(id=d.id, text=d.text, namespace=d.namespace, metadata=d.metadata, score=float(s)) for s, d in hits]
     )
 
+
+# --- Email via Gmail SMTP ---
+class EmailRequest(BaseModel):
+    to: Optional[str] = None
+    subject: str
+    body: str
+    reply_to: Optional[str] = None
+
+
+@app.post("/send_email")
+def send_email(req: EmailRequest):
+    import smtplib
+    from email.message import EmailMessage
+
+    gmail_user = os.getenv("GMAIL_USER")
+    gmail_pass = os.getenv("GMAIL_PASS")
+    if not gmail_user or not gmail_pass:
+        return {"ok": False, "error": "Missing GMAIL_USER/GMAIL_PASS env"}
+
+    to_addr = req.to or os.getenv("MAIL_TO") or gmail_user
+    msg = EmailMessage()
+    msg["Subject"] = req.subject
+    msg["From"] = gmail_user
+    msg["To"] = to_addr
+    if req.reply_to:
+        msg["Reply-To"] = req.reply_to
+    msg.set_content(req.body)
+
+    try:
+        with smtplib.SMTP_SSL("smtp.gmail.com", 465) as smtp:
+            smtp.login(gmail_user, gmail_pass)
+            smtp.send_message(msg)
+        return {"ok": True}
+    except Exception as e:
+        return {"ok": False, "error": str(e)}
 
 if __name__ == "__main__":
     import uvicorn

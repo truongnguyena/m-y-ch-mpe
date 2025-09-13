@@ -10,7 +10,7 @@ import { RouterLink, RouterLinkActive } from '@angular/router';
         <span class="logo">✦</span>
         <span class="name">kurumianimeshop</span>
       </div>
-      <nav class="menu">
+      <nav class="menu" aria-label="Điều hướng chính">
         <a routerLink="/" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }">
           Trang chủ
         </a>
