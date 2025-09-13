@@ -26,5 +26,9 @@ export const routes: Routes = [
     path: 'wallet',
     loadComponent: () => import('./pages/wallet/wallet').then(m => m.WalletComponent)
   },
+  {
+    path: 'admin/ingest',
+    loadComponent: () => import('./pages/admin-ingest/admin-ingest').then(m => m.AdminIngestComponent)
+  },
   { path: '**', redirectTo: '' }
 ];

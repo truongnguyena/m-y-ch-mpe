@@ -3,8 +3,8 @@ import { HttpClient } from '@angular/common/http';
 
 export type ChatMessage = { role: 'user' | 'assistant' | 'system'; text: string; ts: number };
 
-const DEFAULT_BACKEND = 'http://localhost:8000';
-const AVATAR_URL = 'https://cdn.jsdelivr.net/gh/andatare/placeholder@main/anime-white-hair-blue-eyes.png';
+const DEFAULT_BACKEND = localStorage.getItem('ai_backend') || 'http://localhost:8000';
+const DEFAULT_AVATAR = localStorage.getItem('ai_avatar') || 'https://cdn.jsdelivr.net/gh/andatare/placeholder@main/anime-white-hair-blue-eyes.png';
 
 @Injectable({ providedIn: 'root' })
 export class AssistantService {
@@ -12,7 +12,7 @@ export class AssistantService {
 		{ role: 'system', text: 'Xin chào! Mình là trợ lý Anime Shop, mình có thể giúp gì cho bạn?', ts: Date.now() }
 	]);
 
-	readonly avatarUrl = AVATAR_URL;
+	readonly avatarUrl = DEFAULT_AVATAR;
 	backendBase = DEFAULT_BACKEND;
 
 	constructor(private readonly http: HttpClient) {}
