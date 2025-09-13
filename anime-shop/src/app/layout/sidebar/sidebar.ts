@@ -17,6 +17,7 @@ import { RouterLink, RouterLinkActive } from '@angular/router';
         <a routerLink="/products" routerLinkActive="active">Sản phẩm</a>
         <a routerLink="/cart" routerLinkActive="active">Giỏ hàng</a>
         <a routerLink="/checkout" routerLinkActive="active">Thanh toán</a>
+        <a routerLink="/wallet" routerLinkActive="active">Ví xu</a>
       </nav>
     </aside>
   `,
